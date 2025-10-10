@@ -88,7 +88,19 @@ nav.app-nav {
    Cover Page
    ================================================ */
 
+.cover,
 .cover.show {
-  padding-top: 60px !important;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: none !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Remove top spacing when no cover page */
+main {
+  padding-top: 0 !important;
+}
+
+section.content {
+  padding-top: 0 !important;
 }
