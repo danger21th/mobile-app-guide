@@ -1,0 +1,6 @@
+- [หน้าแรก](README.md)
+- คู่มือการใช้งาน
+  - [เริ่มต้นใช้งาน](guide/getting-started.md)
+  - [ฟีเจอร์หลัก](guide/features.md)
+  - [คำถามที่พบบ่อย](guide/faq.md)
+- [ติดต่อเรา](guide/contact.md)
