@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
-  <link rel="stylesheet" href="assets/css/custom.css?v=10">
+  <link rel="stylesheet" href="assets/css/custom.css?v=11">
 </head>
 <body>
   <div id="app">กำลังโหลดคู่มือ...</div>
@@ -32,17 +32,10 @@
           hook.doneEach(function() {
             var cover = document.querySelector('.cover');
             var hash = window.location.hash;
-            var sidebar = document.querySelector('.sidebar');
 
             // Hide cover if not on home page
             if (cover && hash !== '#/' && hash !== '') {
               cover.style.display = 'none';
-
-              // Close sidebar when leaving cover page (mobile)
-              if (window.innerWidth <= 768 && sidebar) {
-                document.body.classList.add('close');
-                sidebar.style.transform = 'translateX(-300px)';
-              }
             }
             // Show cover only on home page
             if (cover && (hash === '#/' || hash === '')) {
@@ -50,69 +43,6 @@
             }
           });
 
-          // Mobile sidebar toggle fix
-          hook.mounted(function() {
-            var sidebarToggle = document.querySelector('.sidebar-toggle');
-            var sidebar = document.querySelector('.sidebar');
-
-            function closeSidebar() {
-              document.body.classList.add('close');
-              if (sidebar) {
-                sidebar.style.transform = 'translateX(-300px)';
-              }
-            }
-
-            function openSidebar() {
-              document.body.classList.remove('close');
-              if (sidebar) {
-                sidebar.style.transform = 'translateX(0)';
-              }
-            }
-
-            function isSidebarOpen() {
-              return !document.body.classList.contains('close') &&
-                     sidebar &&
-                     sidebar.style.transform !== 'translateX(-300px)';
-            }
-
-            // Toggle button click
-            if (sidebarToggle && sidebar) {
-              sidebarToggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-
-                if (isSidebarOpen()) {
-                  closeSidebar();
-                } else {
-                  openSidebar();
-                }
-              });
-            }
-
-            // Close sidebar when clicking on links
-            if (sidebar) {
-              sidebar.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A' && window.innerWidth <= 768) {
-                  setTimeout(closeSidebar, 100);
-                }
-              });
-            }
-
-            // Close sidebar when clicking outside (on content area)
-            document.addEventListener('click', function(e) {
-              if (window.innerWidth <= 768 &&
-                  isSidebarOpen() &&
-                  !sidebar.contains(e.target) &&
-                  !sidebarToggle.contains(e.target)) {
-                closeSidebar();
-              }
-            });
-
-            // Start with sidebar closed on mobile
-            if (window.innerWidth <= 768) {
-              closeSidebar();
-            }
-          });
         }
       ]
     }

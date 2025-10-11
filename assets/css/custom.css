@@ -176,57 +176,14 @@ section.content {
    ================================================ */
 
 @media screen and (max-width: 768px) {
-  /* Sidebar - hide by default on mobile */
+  /* Hide sidebar completely on mobile */
   .sidebar {
-    transform: translateX(-300px);
-    transition: transform 0.25s ease-out;
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    width: 300px;
-    z-index: 20;
-    overflow-y: auto;
-    background: white !important;
-    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+    display: none !important;
   }
 
-  /* Keep sidebar header style on mobile */
-  .sidebar > h1 {
-    margin: 0 !important;
-    padding: 0.8rem 1rem !important;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-    color: white !important;
-  }
-
-  .sidebar > h1 a {
-    color: white !important;
-  }
-
-  /* Show sidebar when toggled open */
-  .sidebar-toggle-button {
-    display: block !important;
-  }
-
-  body.close .sidebar {
-    transform: translateX(-300px);
-  }
-
-  /* Sidebar toggle button */
+  /* Hide sidebar toggle button on mobile */
   .sidebar-toggle {
-    display: block !important;
-    background-color: transparent;
-    border: 0;
-    outline: none;
-    padding: 10px 14px;
-    position: fixed;
-    bottom: auto;
-    left: 0;
-    top: 0;
-    z-index: 30;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
+    display: none !important;
   }
 
   /* Content area - full width on mobile */
@@ -234,38 +191,6 @@ section.content {
     left: 0 !important;
     position: relative;
     padding-left: 0;
-  }
-
-  /* Mask overlay when sidebar is open */
-  .sidebar-toggle-button:not(.collapsed) ~ .sidebar {
-    transform: translateX(0);
-  }
-
-  /* Add backdrop when sidebar is open */
-  body:not(.close) .sidebar {
-    transform: translateX(0);
-  }
-
-  /* Ensure hamburger menu is visible and clickable */
-  button.sidebar-toggle {
-    z-index: 30 !important;
-    pointer-events: auto !important;
-  }
-
-  /* Overlay backdrop when sidebar is open */
-  body:not(.close)::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 10;
-    pointer-events: auto;
-  }
-
-  body.close::before {
-    display: none;
+    margin-left: 0 !important;
   }
 }
