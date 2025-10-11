@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
-  <link rel="stylesheet" href="assets/css/custom.css?v=7">
+  <link rel="stylesheet" href="assets/css/custom.css?v=8">
 </head>
 <body>
   <div id="app">กำลังโหลดคู่มือ...</div>
@@ -39,6 +39,28 @@
             // Show cover only on home page
             if (cover && (hash === '#/' || hash === '')) {
               cover.style.display = 'flex';
+            }
+          });
+
+          // Mobile sidebar toggle fix
+          hook.mounted(function() {
+            var sidebarToggle = document.querySelector('.sidebar-toggle');
+            var sidebar = document.querySelector('.sidebar');
+
+            if (sidebarToggle && sidebar) {
+              sidebarToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Toggle body class
+                if (document.body.classList.contains('close')) {
+                  document.body.classList.remove('close');
+                  sidebar.style.transform = 'translateX(0)';
+                } else {
+                  document.body.classList.add('close');
+                  sidebar.style.transform = 'translateX(-300px)';
+                }
+              });
             }
           });
         }

@@ -176,19 +176,30 @@ section.content {
    ================================================ */
 
 @media screen and (max-width: 768px) {
+  /* Sidebar - hide by default on mobile */
   .sidebar {
     transform: translateX(-300px);
     transition: transform 0.25s ease-out;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 300px;
+    z-index: 20;
+    overflow-y: auto;
+    background: white;
   }
 
-  .sidebar.open {
-    transform: translateX(0);
+  /* Show sidebar when toggled open */
+  .sidebar-toggle-button {
+    display: block !important;
   }
 
   body.close .sidebar {
     transform: translateX(-300px);
   }
 
+  /* Sidebar toggle button */
   .sidebar-toggle {
     display: block !important;
     background-color: transparent;
@@ -199,11 +210,32 @@ section.content {
     bottom: auto;
     left: 0;
     top: 0;
-    z-index: 4;
+    z-index: 30;
     cursor: pointer;
+    width: 50px;
+    height: 50px;
   }
 
+  /* Content area - full width on mobile */
   .content {
     left: 0 !important;
+    position: relative;
+    padding-left: 0;
+  }
+
+  /* Mask overlay when sidebar is open */
+  .sidebar-toggle-button:not(.collapsed) ~ .sidebar {
+    transform: translateX(0);
+  }
+
+  /* Add backdrop when sidebar is open */
+  body:not(.close) .sidebar {
+    transform: translateX(0);
+  }
+
+  /* Ensure hamburger menu is visible and clickable */
+  button.sidebar-toggle {
+    z-index: 30 !important;
+    pointer-events: auto !important;
   }
 }
