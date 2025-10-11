@@ -535,4 +535,4 @@ Signal: ●●●●○ (4/5)
 
 ---
 
-**ก่อนหน้า:** [รายงาน (Reports)](reports.md) | **ถัดไป:** [จัดการสาขา (Branches)](branches.md)
+**ก่อนหน้า:** [รายงาน (Reports)](/posteeyai/reports.md) | **ถัดไป:** [จัดการสาขา (Branches)](/posteeyai/branches.md)

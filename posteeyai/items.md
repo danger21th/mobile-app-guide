@@ -323,4 +323,4 @@
 
 ---
 
-**ก่อนหน้า:** [การเริ่มต้นและการนำทาง](getting-started.md) | **ถัดไป:** [ใบเสร็จ (Receipts)](receipts.md)
+**ก่อนหน้า:** [การเริ่มต้นและการนำทาง](/posteeyai/getting-started.md) | **ถัดไป:** [ใบเสร็จ (Receipts)](/posteeyai/receipts.md)

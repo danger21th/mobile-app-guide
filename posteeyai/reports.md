@@ -463,4 +463,4 @@
 
 ---
 
-**ก่อนหน้า:** [ใบเสร็จ (Receipts)](receipts.md) | **ถัดไป:** [การตั้งค่า (Settings)](settings.md)
+**ก่อนหน้า:** [ใบเสร็จ (Receipts)](/posteeyai/receipts.md) | **ถัดไป:** [การตั้งค่า (Settings)](/posteeyai/settings.md)

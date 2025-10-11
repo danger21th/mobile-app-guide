@@ -444,4 +444,4 @@ Longitude: 100.5354
 
 ---
 
-**ก่อนหน้า:** [การตั้งค่า (Settings)](settings.md) | **ถัดไป:** [คู่มือแนวทางด่วน](quick-reference.md)
+**ก่อนหน้า:** [การตั้งค่า (Settings)](/posteeyai/settings.md) | **ถัดไป:** [คู่มือแนวทางด่วน](/posteeyai/quick-reference.md)

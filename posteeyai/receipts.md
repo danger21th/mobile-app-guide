@@ -436,4 +436,4 @@ Total: 500 บาท ✓
 
 ---
 
-**ก่อนหน้า:** [จัดการสินค้า (Items)](items.md) | **ถัดไป:** [รายงาน (Reports)](reports.md)
+**ก่อนหน้า:** [จัดการสินค้า (Items)](/posteeyai/items.md) | **ถัดไป:** [รายงาน (Reports)](/posteeyai/reports.md)
