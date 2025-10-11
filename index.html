@@ -31,8 +31,14 @@
         function(hook, vm) {
           hook.doneEach(function() {
             var cover = document.querySelector('.cover');
-            if (cover && window.location.hash !== '#/') {
+            var hash = window.location.hash;
+            // Hide cover if not on home page
+            if (cover && hash !== '#/' && hash !== '') {
               cover.style.display = 'none';
+            }
+            // Show cover only on home page
+            if (cover && (hash === '#/' || hash === '')) {
+              cover.style.display = 'flex';
             }
           });
         }
