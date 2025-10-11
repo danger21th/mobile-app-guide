@@ -32,9 +32,17 @@
           hook.doneEach(function() {
             var cover = document.querySelector('.cover');
             var hash = window.location.hash;
+            var sidebar = document.querySelector('.sidebar');
+
             // Hide cover if not on home page
             if (cover && hash !== '#/' && hash !== '') {
               cover.style.display = 'none';
+
+              // Close sidebar when leaving cover page (mobile)
+              if (window.innerWidth <= 768 && sidebar) {
+                document.body.classList.add('close');
+                sidebar.style.transform = 'translateX(-300px)';
+              }
             }
             // Show cover only on home page
             if (cover && (hash === '#/' || hash === '')) {
