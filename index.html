@@ -26,6 +26,17 @@
       requestHeaders: {
         'cache-control': 'no-cache'
       },
+      // Hide coverpage after click
+      plugins: [
+        function(hook, vm) {
+          hook.doneEach(function() {
+            var cover = document.querySelector('.cover');
+            if (cover && window.location.hash !== '#/') {
+              cover.style.display = 'none';
+            }
+          });
+        }
+      ]
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
