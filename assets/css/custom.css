@@ -88,12 +88,66 @@ nav.app-nav {
    Cover Page
    ================================================ */
 
-.cover,
+.cover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
 .cover.show {
-  display: none !important;
-  height: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover-main {
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+.cover h1 {
+  color: white !important;
+  font-size: 2.5rem !important;
+  margin: 0 0 1rem 0 !important;
+  font-weight: 700;
+}
+
+.cover blockquote {
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-left: 4px solid rgba(255, 255, 255, 0.5);
+  font-size: 1.1rem;
+}
+
+.cover ul {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  text-align: left;
+  display: inline-block;
+}
+
+.cover ul li {
+  color: white;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  line-height: 1.8;
+}
+
+.cover a {
+  background: white !important;
+  color: #667eea !important;
+  padding: 0.8rem 2rem !important;
+  border-radius: 25px !important;
+  text-decoration: none !important;
+  display: inline-block;
+  margin: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cover a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Remove top spacing when no cover page */
